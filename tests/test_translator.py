@@ -16,11 +16,7 @@ class TestTranslator:
         respx.post(OPENROUTER_URL).mock(
             return_value=httpx.Response(
                 200,
-                json={
-                    "choices": [
-                        {"message": {"content": "سلام دنیا"}}
-                    ]
-                },
+                json={"choices": [{"message": {"content": "سلام دنیا"}}]},
             )
         )
 
@@ -38,11 +34,7 @@ class TestTranslator:
         route = respx.post(OPENROUTER_URL).mock(
             return_value=httpx.Response(
                 200,
-                json={
-                    "choices": [
-                        {"message": {"content": "ترجمه"}}
-                    ]
-                },
+                json={"choices": [{"message": {"content": "ترجمه"}}]},
             )
         )
 

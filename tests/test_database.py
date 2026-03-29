@@ -6,9 +6,7 @@ class TestDatabase:
         conn = get_connection(":memory:")
         init_db(conn)
 
-        cursor = conn.execute(
-            "SELECT name FROM sqlite_master WHERE type='table' AND name='usage'"
-        )
+        cursor = conn.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='usage'")
         assert cursor.fetchone() is not None
 
     def test_init_creates_index(self) -> None:
